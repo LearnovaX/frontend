@@ -1,0 +1,6 @@
+/* CKEditor content area minimum/maximum height with scroll */
+.ck-editor__editable[role="textbox"] {
+  min-height: 360px;
+  max-height: 60vh;
+  overflow-y: auto;
+}
