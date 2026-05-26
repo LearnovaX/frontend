@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans+Mono:wght@100..900&family=Roboto:ital,wght@0,100;1,100..900&display=swap');
+@import "tailwindcss";
+
+html, body { height: 100%; }
+
+:root {
+    /* Neutrals */
+    --background: #f7f9fc;               /* softer than pure white */
+    --foreground: #0f172a;               /* slate-900 */
+    --muted: #64748b;                    /* slate-500 */
+    --border: #e6eaf0;                   /* subtle borders */
+
+    /* Surfaces */
+    --surface-1: #ffffff;                /* cards */
+    --surface-2: #f1f5f9;                /* grouped bg / tab rails */
+    --elevated: #ffffff;                 /* popovers/menus */
+
+    /* Brand */
+    --primary: #3b82f6;                  /* blue-500 (kept) */
+    --primary-strong: #2563eb;           /* blue-600 */
+    --accent-start: #3b82f6;             /* blue-500 */
+    --accent-end: #8b5cf6;               /* violet-500 */
+    --danger: #ef4444;
+
+    /* Legacy keys you already use elsewhere */
+    --login-background: #f4f8fc;
+    --dark-blue: #4882C0;
+    --dark-blue-hover: #5C96D4;
+    --dark-blue2: #3087c3;
+    --dark: #404040;
+
+    /* Motion */
+    --ease-smooth: cubic-bezier(.22,.61,.36,1);
+}
+
+.dark {
+    --background: #0b1220;               /* deep navy instead of black */
+    --foreground: #e5e7eb;               /* slate-200 */
+    --muted: #94a3b8;                    /* slate-400 */
+    --border: #223046;                   /* outline on dark */
+
+    --surface-1: #0f172a;                /* slate-900 */
+    --surface-2: #111827;                /* gray-900-ish */
+    --elevated: #111827;
+
+    --primary: #60a5fa;                  /* blue-400 for contrast */
+    --primary-strong: #3b82f6;
+    --accent-start: #60a5fa;             /* blue-400 */
+    --accent-end: #a78bfa;               /* violet-400 */
+
+    --danger: #dc2626;
+    --login-background: #0f172a;
+}
+
+/* Apply theme */
+html, body, #root {
+    background-color: var(--background);
+    color: var(--foreground);
+    transition: background-color 200ms var(--ease-smooth), color 200ms var(--ease-smooth);
+    min-height: 100vh;
+}
+
+/* Map variables to Tailwind tokens (Tailwind v4 @theme) */
+@theme {
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --color-muted: var(--muted);
+    --color-border: var(--border);
+
+    --color-surface-1: var(--surface-1);
+    --color-surface-2: var(--surface-2);
+    --color-elevated: var(--elevated);
+
+    --color-primary: var(--primary);
+    --color-primary-strong: var(--primary-strong);
+    --color-accent-start: var(--accent-start);
+    --color-accent-end: var(--accent-end);
+    --color-danger: var(--danger);
+
+    --font-inter: "Inter", sans-serif;
+    --font-noto-sans-mono: "Noto Sans Mono", monospace;
+    --font-roboto: "Roboto", sans-serif;
+
+    --shadow-glow: 0 8px 30px rgba(2, 6, 23, 0.06);
+}
+
+/* Pressables always get a pointer (but keep text inputs as text) */
+button, a, [role="button"], input[type="checkbox"], input[type="radio"], select { cursor: pointer; }
+
+/* Subtle “pop” animation for menus/popovers */
+@keyframes pop {
+    from { opacity: 0; transform: translateY(-4px) scale(.98); }
+    to   { opacity: 1; transform: translateY(0)     scale(1);   }
+}
+.animate-pop { animation: pop 140ms var(--ease-smooth); }
+
+/* Reduce-motion respect */
+@media (prefers-reduced-motion: reduce) {
+    .animate-pop { animation: none; }
+}

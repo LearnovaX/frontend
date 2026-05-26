@@ -1,0 +1,45 @@
+name: Deploy Frontend
+
+on:
+  workflow_call:
+    inputs:
+      image:
+        required: true
+        type: string
+      tag:
+        required: true
+        type: string
+
+jobs:
+  update-cluster-config:
+    name: Update Cluster Config Repository
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup Kustomize
+        uses: imranismail/setup-kustomize@v2
+
+      - name: Checkout cluster-config repository
+        uses: actions/checkout@v4
+        with:
+          repository: LearnovaX/cluster-config
+          token: ${{ secrets.CLUSTER_CONFIG_PAT }}
+          path: cluster-config
+
+      - name: Update frontend image tag
+        run: |
+          cd cluster-config/frontend/prod
+          kustomize edit set image \
+            frontend-image=${{ inputs.image }}:${{ inputs.tag }}
+
+      - name: Commit changes
+        run: |
+          cd cluster-config
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add .
+          git commit -m "Deploy frontend ${{ inputs.tag }}" || echo "No changes to commit"
+
+      - name: Push changes
+        run: |
+          cd cluster-config
+          git push

@@ -1,0 +1,23 @@
+name: frontend-ci
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  build:
+    uses: ./.github/workflows/build.yml
+    secrets: inherit
+
+  deploy:
+    needs: build
+    uses: ./.github/workflows/deploy.yml
+    with:
+      image: ${{ needs.build.outputs.image }}
+      tag: ${{ needs.build.outputs.tag }}
+    secrets: inherit
