@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import api from "@/api/api";
 import { useTheme } from "@/components/common/ThemeContext";
-import learnovax_logo from "@/assets/learnovax-logo.png";
+import lms_logo from "@/assets/lms-logo.svg";
 import Input from "@/components/common/Input";
 import { Mail, Send, ArrowLeft, RefreshCw } from "lucide-react";
 
@@ -89,9 +89,9 @@ export default function ForgotPassword() {
                             isDark ? "bg-blue-500" : "bg-blue-400"
                         } animate-pulse`}></div>
                         <img
-                            src={learnovax_logo}
-                            alt="Logo"
-                            className="relative w-48 h-auto mx-auto transform transition-transform duration-300 hover:scale-105"
+                            src={lms_logo}
+                            alt="LMS Logo"
+                            className="relative w-56 h-auto mx-auto transform transition-transform duration-300 hover:scale-105"
                         />
                     </div>
 

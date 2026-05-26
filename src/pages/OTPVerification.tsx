@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import api from "@/api/api";
-import learnovax_logo from "@/assets/learnovax-logo.png";
+import lms_logo from "@/assets/lms-logo.svg";
 import { useTheme } from "@/components/common/ThemeContext";
 import { ArrowLeft, Shield, Mail, RefreshCw, CheckCircle } from "lucide-react";
 
@@ -146,9 +146,9 @@ export default function OTPVerification({ email, password, otpToken, onSuccess, 
                             isDark ? "bg-blue-500" : "bg-blue-400"
                         } animate-pulse`}></div>
                         <img
-                            src={learnovax_logo}
-                            alt="Logo"
-                            className="relative w-48 h-auto mx-auto transform transition-transform duration-300 hover:scale-105"
+                            src={lms_logo}
+                            alt="LMS Logo"
+                            className="relative w-56 h-auto mx-auto transform transition-transform duration-300 hover:scale-105"
                         />
                     </div>
 

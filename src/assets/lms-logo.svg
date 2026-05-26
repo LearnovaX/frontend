@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200" width="400" height="200">
+  <defs>
+    <linearGradient id="mainGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#4f46e5;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#ec4899;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#db2777;stop-opacity:1" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background circle glow -->
+  <circle cx="70" cy="100" r="65" fill="none" stroke="url(#mainGradient)" stroke-width="1" opacity="0.2"/>
+
+  <!-- Left page of book -->
+  <path d="M 30 60 Q 35 65 35 100 Q 35 135 30 140 L 50 140 Q 45 135 45 100 Q 45 65 50 60 Z" fill="url(#mainGradient)" opacity="0.9"/>
+  
+  <!-- Right page of book -->
+  <path d="M 50 60 Q 55 65 55 100 Q 55 135 50 140 L 70 140 Q 65 135 65 100 Q 65 65 70 60 Z" fill="url(#mainGradient)" filter="url(#glow)"/>
+
+  <!-- Book spine highlight -->
+  <line x1="50" y1="60" x2="50" y2="140" stroke="rgba(255,255,255,0.3)" stroke-width="2"/>
+
+  <!-- Light bulb (knowledge symbol) -->
+  <g transform="translate(90, 75)">
+    <!-- Bulb -->
+    <circle cx="0" cy="0" r="18" fill="url(#accentGradient)" filter="url(#glow)"/>
+    <!-- Filament curve -->
+    <path d="M -6 -2 Q -2 2 2 -2 Q 6 2 10 -2" stroke="rgba(255,255,255,0.4)" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+    <!-- Base -->
+    <rect x="-8" y="18" width="16" height="4" fill="url(#accentGradient)" rx="1"/>
+    <!-- Socket lines -->
+    <rect x="-6" y="22" width="3" height="6" fill="url(#accentGradient)" rx="1"/>
+    <rect x="3" y="22" width="3" height="6" fill="url(#accentGradient)" rx="1"/>
+  </g>
+
+  <!-- Connecting dot -->
+  <circle cx="72" cy="100" r="3" fill="url(#mainGradient)"/>
+
+  <!-- Text: LMS -->
+  <text x="160" y="110" font-family="'Inter', 'Segoe UI', sans-serif" font-size="56" font-weight="700" fill="url(#mainGradient)" letter-spacing="-2">LMS</text>
+  
+  <!-- Subtitle -->
+  <text x="160" y="145" font-family="'Inter', 'Segoe UI', sans-serif" font-size="16" font-weight="400" fill="#6b7280" letter-spacing="1">LEARNING PLATFORM</text>
+
+  <!-- Decorative accent line -->
+  <line x1="160" y1="155" x2="240" y2="155" stroke="url(#accentGradient)" stroke-width="2" opacity="0.6" stroke-linecap="round"/>
+</svg>

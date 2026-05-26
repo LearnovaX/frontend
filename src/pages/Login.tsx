@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import learnovax_logo from "@/assets/learnovax-logo.png";
+import lms_logo from "@/assets/lms-logo.svg";
 import Input from "@/components/common/Input";
 import ToggleDocument from "@/components/common/ToggleDocument";
 import OTPVerification from "./OTPVerification";
@@ -130,9 +130,9 @@ export default function Login() {
                             isDark ? "bg-blue-500" : "bg-blue-400"
                         } animate-pulse`}></div>
                         <img
-                            src={learnovax_logo}
-                            alt="Logo"
-                            className="relative w-48 h-auto mx-auto transform transition-transform duration-300 hover:scale-105"
+                            src={lms_logo}
+                            alt="LMS Logo"
+                            className="relative w-56 h-auto mx-auto transform transition-transform duration-300 hover:scale-105"
                         />
                     </div>
                     <h1 className={`text-2xl font-light mt-6 ${

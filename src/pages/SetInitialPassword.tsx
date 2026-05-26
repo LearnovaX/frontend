@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useSearchParams, useNavigate } from "react-router-dom";
 import api from "@/api/api";
-import learnovax_logo from "@/assets/learnovax-logo.png";
+import lms_logo from "@/assets/lms-logo.svg";
 import Input from "@/components/common/Input";
 import { useTheme } from "@/components/common/ThemeContext";
 import { Lock, Eye, EyeOff, UserPlus, CheckCircle, AlertCircle } from "lucide-react";
@@ -152,7 +152,7 @@ export default function SetInitialPassword() {
                         ? "bg-slate-800/70 backdrop-blur-xl border border-slate-700/50 shadow-2xl shadow-slate-900/50"
                         : "bg-white/80 backdrop-blur-xl border border-white/50 shadow-2xl shadow-black/10"
                 } rounded-3xl p-8 text-center`}>
-                    <img src={learnovax_logo} alt="Logo" className="w-48 h-auto mx-auto mb-6" />
+                    <img src={lms_logo} alt="LMS Logo" className="w-56 h-auto mx-auto mb-6" />
                     <h1 className={`text-2xl font-light mb-6 ${
                         isDark ? "text-slate-100" : "text-slate-800"
                     }`}>
@@ -180,7 +180,7 @@ export default function SetInitialPassword() {
                         ? "bg-slate-800/70 backdrop-blur-xl border border-slate-700/50 shadow-2xl shadow-slate-900/50"
                         : "bg-white/80 backdrop-blur-xl border border-white/50 shadow-2xl shadow-black/10"
                 } rounded-3xl p-8 text-center`}>
-                    <img src={learnovax_logo} alt="Logo" className="w-48 h-auto mx-auto mb-6" />
+                    <img src={lms_logo} alt="LMS Logo" className="w-56 h-auto mx-auto mb-6" />
 
                     <div className={`p-3 rounded-full inline-block mb-4 ${
                         isDark ? "bg-red-900/20" : "bg-red-100"
@@ -246,9 +246,9 @@ export default function SetInitialPassword() {
                             isDark ? "bg-blue-500" : "bg-blue-400"
                         } animate-pulse`}></div>
                         <img
-                            src={learnovax_logo}
-                            alt="Logo"
-                            className="relative w-48 h-auto mx-auto transform transition-transform duration-300 hover:scale-105"
+                            src={lms_logo}
+                            alt="LMS Logo"
+                            className="relative w-56 h-auto mx-auto transform transition-transform duration-300 hover:scale-105"
                         />
                     </div>
 
